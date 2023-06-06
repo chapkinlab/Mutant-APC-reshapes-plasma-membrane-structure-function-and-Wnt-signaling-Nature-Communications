@@ -1,0 +1,9 @@
+name=getInfo("image.filename");
+
+run("8-bit");
+
+setThreshold(1, 255);
+setOption("BlackBackground", false);
+run("Convert to Mask");
+
+run("Make Binary");
