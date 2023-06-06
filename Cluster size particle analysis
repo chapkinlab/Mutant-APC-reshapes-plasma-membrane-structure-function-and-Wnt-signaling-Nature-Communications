@@ -1,0 +1,15 @@
+numROIs = roiManager("Count");
+imgID = getTitle;
+for (i=0; i<numROIs; i++)
+{
+	selectWindow(imgID);
+	SliceName = getInfo("slice.label");
+	roiManager("select",i);
+	run("Duplicate...", " ");	
+	rename(SliceName);
+	run("Analyze Particles...", "size=0.00-Infinity show=Masks display stack");
+	selectWindow(SliceName);
+	close();
+	selectWindow("Mask of "+SliceName+"");
+	close();
+}
