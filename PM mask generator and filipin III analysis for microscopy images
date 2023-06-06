@@ -1,0 +1,35 @@
+name=getInfo("image.filename");
+
+run("Split Channels");
+selectWindow("C3-"+name+"");
+close();
+
+selectWindow("C2-"+name+"");
+
+rename("Pm");
+selectWindow("Pm");
+run("Gaussian Blur...", "sigma=10");
+
+setThreshold(3000, 16383);
+setOption("BlackBackground", false);
+run("Convert to Mask");
+
+run("Divide...", "value=255.000");
+
+selectWindow("C1-"+name+"");
+
+rename(""+name+"-chol");
+
+imageCalculator("Divide create 32-bit", ""+name+"-chol","Pm");
+
+selectWindow("Pm");
+close();
+
+
+selectWindow("Result of "+name+"-chol");
+
+run("Subtract...", "value=775");
+
+selectWindow("Result of "+name+"-chol");
+
+run("Measure");
