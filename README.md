@@ -1,1 +1,1 @@
-Mutant APC reshapes plasma membrane cholesterol-dependent Wnt proteolipid condensate structure-function and feedforward oncogenic β-catenin signaling
+All codes relevant to the following publication: "Mutant APC reshapes plasma membrane cholesterol-dependent Wnt proteolipid condensate structure-function and feedforward oncogenic β-catenin signaling"
